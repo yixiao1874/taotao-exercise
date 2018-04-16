@@ -14,6 +14,10 @@
     <!--打开注解-->
     <mvc:annotation-driven />
 
+    <!-- 配置资源映射 -->
+    <mvc:resources location="/css/" mapping="/css/**"/>
+    <mvc:resources location="/js/" mapping="/js/**"/>
+
     <!--配置视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
