@@ -22,12 +22,14 @@ public class FileController {
     public String upload(MultipartFile file, HttpServletRequest request) throws IOException {
         String path = request.getSession().getServletContext().getRealPath("upload");
         String fileName = file.getOriginalFilename();
+        String extName = fileName.substring(fileName.lastIndexOf(".") + 1);
         File dir = new File(path,fileName);
         if(!dir.exists()){
             dir.mkdirs();
         }
         //MultipartFile自带的解析方法
         file.transferTo(dir);
+
         return "ok!";
     }
 
