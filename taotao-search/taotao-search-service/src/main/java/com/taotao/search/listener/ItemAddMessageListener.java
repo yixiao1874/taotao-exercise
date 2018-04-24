@@ -38,7 +38,7 @@ public class ItemAddMessageListener implements MessageListener{
 			//创建文档对象
 			SolrInputDocument document = new SolrInputDocument();
 			//向文档对象中添加域
-			document.addField("id", searchItem.getId());
+			document.addField("messageId", searchItem.getId());
 			document.addField("item_title", searchItem.getTitle());
 			document.addField("item_sell_point", searchItem.getSell_point());
 			document.addField("item_price", searchItem.getPrice());

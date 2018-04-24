@@ -42,7 +42,7 @@ public class SearchDao {
 		for (SolrDocument solrDocument : solrDocumentList) {
 			SearchItem item = new SearchItem();
 			item.setCategory_name((String) solrDocument.get("item_category_name"));
-			item.setId((String) solrDocument.get("id"));
+			item.setId((String) solrDocument.get("messageId"));
 			//取一张图片
 			String image = (String) solrDocument.get("item_image");
 			if (StringUtils.isNotBlank(image)) {
@@ -53,7 +53,7 @@ public class SearchDao {
 			item.setSell_point((String) solrDocument.get("item_sell_point"));
 			//取高亮显示
 			Map<String, Map<String, List<String>>> highlighting = response.getHighlighting();
-			List<String> list = highlighting.get(solrDocument.get("id")).get("item_title");
+			List<String> list = highlighting.get(solrDocument.get("messageId")).get("item_title");
 			String title = "";
 			if (list != null && list.size() > 0) {
 				title = list.get(0);
