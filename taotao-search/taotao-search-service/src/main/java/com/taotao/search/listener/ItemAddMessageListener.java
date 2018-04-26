@@ -5,6 +5,7 @@ import com.taotao.search.mapper.SearchItemMapper;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.jms.Message;
 import javax.jms.MessageListener;
